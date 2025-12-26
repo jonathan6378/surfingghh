@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Rishita</title>
+    <style>
+        /* --- General Styles --- */
+        :root {
+            --primary-pink: #ff85a1;
+            --deep-rose: #ff4d6d;
+            --soft-cream: #fff0f3;
+            --text-color: #590d22;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-cream);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* --- Header Section --- */
+        header {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff85a1 0%, #ff4d6d 100%);
+            color: white;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .sub-header {
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* --- Quotes Section --- */
+        #quotes {
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 133, 161, 0.2);
+            position: relative;
+        }
+
+        .quote-card {
+            font-size: 1.3rem;
+            color: var(--deep-rose);
+            margin-bottom: 20px;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        .heart-divider {
+            color: var(--deep-rose);
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        /* --- Quiz Section --- */
+        #quiz {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .quiz-title {
+            text-align: center;
+            color: var(--deep-rose);
+            margin-bottom: 30px;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ffe5ec;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--primary-pink);
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--deep-rose);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        button:hover {
+            background-color: #ff0a54;
+            transform: scale(1.05);
+        }
+
+        /* --- Results Section --- */
+        #results {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: #ffb7c5;
+            border-radius: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .score-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #c9184a;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating-heart {
+            position: fixed;
+            color: var(--primary-pink);
+            font-size: 20px;
+            user-select: none;
+            z-index: -1;
+            animation: float 5s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 10px; }
+            #quiz { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Background Hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+
+    <header>
+        <div class="container">
+            <h1>For Rishita</h1>
+            <p class="sub-header">A small token of my love for the most special person.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Quotes Section -->
+        <section id="quotes">
+            <div class="heart-divider">♥</div>
+            <div class="quote-card">
+                “Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.”
+            </div>
+            <div class="heart-divider">♥</div>
+            <div class="quote-card">
+                “In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.”
+            </div>
+            <div class="heart-divider">♥</div>
+            <div class="quote-card">
+                “Every time I see you, I fall in love all over again.”
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz">
+            <h2 class="quiz-title">How well do you know us?</h2>
+            
+            <form id="loveQuiz">
+                <!-- Question 1 -->
+                <div class="question-block">
+                    <label for="q1">When did we first start talking?</label>
+                    <input type="text" id="q1" placeholder="e.g., January 1st" required>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-block">
+                    <label for="q2">What is my favorite color?</label>
+                    <select id="q2" required>
+                        <option value="">Select an option</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                    </select>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-block">
+                    <label for="q3">What is my absolute favorite food?</label>
+                    <input type="text" id="q3" placeholder="Enter food name" required>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-block">
+                    <label for="q4">What is my favorite place to be?</label>
+                    <select id="q4" required>
+                        <option value="">Select an option</option>
+                        <option value="Beach">At the beach</option>
+                        <option value="Mountains">In the mountains</option>
+                        <option value="Home">At home with you</option>
+                        <option value="Stadium">At the football stadium</option>
+                    </select>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-block">
+                    <label for="q5">Which position do I play in football?</label>
+                    <select id="q5" required>
+                        <option value="">Select an option</option>
+                        <option value="Goalkeeper">Goalkeeper</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Midfielder">Midfielder</option>
+                        <option value="Forward">Forward / Striker</option>
+                    </select>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-block">
+                    <label for="q6">What do I love the most in this world?</label>
+                    <input type="text" id="q6" placeholder="Hint: It starts with R..." required>
+                </div>
+
+                <button type="button" onclick="calculateScore()">Check My Answers ❤️</button>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results">
+            <h2>Quiz Results</h2>
+            <div id="scoreDisplay" class="score-text"></div>
+            <p id="feedbackMessage" style="font-size: 1.2rem; margin-top: 15px;"></p>
+        </section>
+
+    </main>
+
+    <footer style="margin: 40px 0; text-align: center; opacity: 0.7;">
+        <p>Made with ❤️ for Rishita</p>
+    </footer>
+
+    <script>
+        function calculateScore() {
+            // NOTE: Update these 'correctAnswers' to your actual details!
+            const correctAnswers = {
+                q1: "January 1", // Example date
+                q2: "Blue",     // Example color
+                q3: "Pizza",    // Example food
+                q4: "Home",     // Example place
+                q5: "Forward",  // Example position
+                q6: "Rishita"   // The obvious answer
+            };
+
+            let score = 0;
+            const totalQuestions = 6;
+
+            // Get User Values
+            const u1 = document.getElementById('q1').value.trim().toLowerCase();
+            const u2 = document.getElementById('q2').value;
+            const u3 = document.getElementById('q3').value.trim().toLowerCase();
+            const u4 = document.getElementById('q4').value;
+            const u5 = document.getElementById('q5').value;
+            const u6 = document.getElementById('q6').value.trim().toLowerCase();
+
+            // Logic Check (Simple text matching for inputs)
+            if (u1.includes("january")) score++; // Flexible matching for date
+            if (u2 === correctAnswers.q2) score++;
+            if (u3 === correctAnswers.q3.toLowerCase()) score++;
+            if (u4 === correctAnswers.q4) score++;
+            if (u5 === correctAnswers.q5) score++;
+            if (u6 === "rishita") score++;
+
+            // Display Results
+            const resultsDiv = document.getElementById('results');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const feedback = document.getElementById('feedbackMessage');
+
+            resultsDiv.style.display = "block";
+            scoreDisplay.innerHTML = `Your Score: ${score} / ${totalQuestions}`;
+
+            if (score === totalQuestions) {
+                feedback.innerHTML = "Perfect score! You know me better than anyone else. I'm so lucky to have you! ❤️";
+            } else if (score >= 4) {
+                feedback.innerHTML = "Great job, Rishita! You know me so well, but there's always more for us to discover together. 😘";
+            } else {
+                feedback.innerHTML = "It's okay! All this means is I get to spend more time telling you all about myself. I love you! ❤️";
+            }
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
